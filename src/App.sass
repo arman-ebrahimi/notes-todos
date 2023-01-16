@@ -1,3 +1,5 @@
+$color1: salmon
+
 .App
   padding: 20px
   background-color: #333
@@ -5,7 +7,7 @@
   min-height: 100vh
 h1
   text-align: center
-  color: salmon
+  color: $color1
   font-family: "Times New Roman", sans-serif
 .main-menu
   width: 50%
@@ -17,27 +19,52 @@ h1
     padding: 20px
     border-radius: 50%
     font-size: 1.2em
-    background-color: salmon
+    background-color: $color1
+    color: #ccc
     &:hover
       background-color: rgb(250, 128, 90)
-    color: #ccc
 .notes-box
   width: 50%
   margin: 0 auto
-  border-radius: 15px
+  border-radius: 10px
   padding: 20px
-  background-color: salmon
+  background-color: $color1
   .single-note
-    padding: 10px
     margin-top: 10px
-    border: solid 2px white
+    border: solid 2px #333
+    border-radius: 3px
     font-size: 1.2em
     color: white
+    .note-head
+      display: flex
+      justify-content: space-between
+      align-items: center
+      background-color: #ccc
+      color: black
+      padding: 5px 15px
+      .date
+        color: teal
+        font-size: 0.5em
+        font-style: italic
+      button
+        background-color: transparent
+        border: none
+        color: #333
+        &:first-child
+          margin-right: 5px
+      .edit-btn:hover
+        color: seagreen
+      .del-btn:hover
+        color: red
+    pre
+      padding: 10px
+      margin: 0
 .add-page
   width: max-content
   margin: 0 auto
   h2
-    color: salmon
+    text-align: center
+    color: $color1
     margin-top: 2%
   .insert-menu
     margin-top: 10%
@@ -51,13 +78,13 @@ h1
     padding: 10px
     margin-top: 2%
     border-radius: 10px
-    border: 2px salmon solid
+    border: 2px $color1 solid
     min-height: 300px
     min-width: 300px
     resize: both
     &:focus
       outline: none
-      box-shadow: 0 0 20px salmon
+      box-shadow: 0 0 20px $color1
 
 
 

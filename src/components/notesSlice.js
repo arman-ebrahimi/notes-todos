@@ -6,7 +6,14 @@ const notesSlice = createSlice({
     initialState: [],
     reducers: {
         addNote(state, action){
-            state.push(action.payload)
+            state.splice(0, 0, action.payload)
+        },
+        deleteNote(state, action){
+            state.splice(action.payload, 1)
+        },
+        editNote(state, action){
+            state[action.payload.index].text = action.payload.text;
+            state[action.payload.index].editedDate = action.payload.newDate;
         }
     }
 })

@@ -16,7 +16,7 @@ export const NotesList = () => {
                 {allNotes.map((item, index) => {
                     return(
                         <div className="single-note" key={index}>
-                            <div className="note-head"><span className="date">{item.date}</span>{item.editedDate && <span className="date">Is edited in: {item.editedDate}</span>}<span><button className="fa fa-pen edit-btn" onClick={() => navigate("/edit", {state: {text: item.text, subject: item.subject, index: index}})}></button><button className="fa fa-trash del-btn" onClick={() => handleDelete(index)}></button></span></div>
+                            <div className="note-head"><div className="date date1">{item.date}</div>{item.editedDate && <div className="date date2">Is edited in: {item.editedDate}</div>}<span><button className="fa fa-pen edit-btn" onClick={() => navigate("/edit", {state: {text: item.text, subject: item.subject, index: index}})}></button><button className="fa fa-trash del-btn" onClick={() => handleDelete(index)}></button></span></div>
                             <span className="subject">{item.subject}</span><hr />
                             <pre>{item.text}</pre>
                         </div>

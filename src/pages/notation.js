@@ -23,7 +23,7 @@ export const Notation = () => {
             <h2>Add a new note</h2>
             <div className="insert-menu"><button className="fa fa-check text-success" onClick={handleClick}></button></div>
             <div className="subject-box">
-                <label>Subject: </label>
+                <label className="fw-bold">Subject: </label>
                 <input className="subject-input" type="text" onChange={handleChange1} autoFocus={true} />
             </div>
             <textarea className="text-input" onChange={handleChange2}></textarea>

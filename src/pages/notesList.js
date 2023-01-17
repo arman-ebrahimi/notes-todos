@@ -1,17 +1,26 @@
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+import {useEffect, useState} from "react";
 
 export const NotesList = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const allNotes = useSelector(state => state.note);
+    const [nowDate, setNowDate] = useState(new Date().toLocaleString())
     const handleDelete = (index) => {
         dispatch({type: "note/deleteNote", payload: index})
     }
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setNowDate(new Date().toLocaleString())
+        }, 1000)
+        return () => clearInterval(interval)
+    },[])
+
     return(
         <>
             <h1>Daily notes</h1>
-            <div className="main-menu"><button className="fa fa-plus" onClick={() => navigate("/notation")}></button></div>
+            <div className="main-menu"><span>{nowDate}</span><button className="fa fa-plus" onClick={() => navigate("/notation")}></button></div>
             <div className="notes-box mt-4">
                 {allNotes.map((item, index) => {
                     return(

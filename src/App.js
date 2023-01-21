@@ -3,8 +3,14 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import './App.sass';
 import {NotesList, Notation, Edit} from "./pages";
+import {useEffect} from "react";
+import {useSelector} from "react-redux";
 
 function App() {
+    const allNotes = useSelector(state => state.note);
+    useEffect(() => {
+        localStorage.setItem("notes", JSON.stringify(allNotes));
+    }, [allNotes])
   return (
     <div className="App">
       <Router>

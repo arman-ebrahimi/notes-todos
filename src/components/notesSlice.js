@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const notesSlice = createSlice({
     name: "note",
-    initialState: [],
+    initialState: localStorage.getItem("notes") ? JSON.parse(localStorage.getItem("notes")) : [],
     reducers: {
         addNote(state, action){
             state.splice(0, 0, action.payload)
@@ -11,9 +11,10 @@ const notesSlice = createSlice({
             state.splice(action.payload, 1)
         },
         editNote(state, action){
-            state[action.payload.index].text = action.payload.newText;
-            state[action.payload.index].subject = action.payload.newSubject;
-            state[action.payload.index].editedDate = action.payload.newDate;
+            let index = action.payload.index;
+            state[index].text = action.payload.newText;
+            state[index].subject = action.payload.newSubject;
+            state[index].editedDate = action.payload.newDate;
         }
     }
 })

@@ -20,7 +20,7 @@ export const NotesList = () => {
     return(
         <>
             <h1>Daily notes</h1>
-            <div className="main-menu"><span>{nowDate}</span><button className="fa fa-plus" onClick={() => navigate("/notation")}></button></div>
+            <div className="main-menu"><span>{nowDate} - {new Date().toLocaleString('en-us', {  weekday: 'long' })}</span><button className="fa fa-plus" onClick={() => navigate("/notation")}></button></div>
             <div className="notes-box mt-4">
                 {allNotes.map((item, index) => {
                     return(

@@ -1,16 +1,36 @@
 $color1: salmon
 $color2: #ddd
-
+@mixin circleStyles
+  border: 1px solid grey
+  border-radius: 50%
+  padding: 0 4px
+  margin-right: 8px
+  cursor: pointer
+*
+  box-sizing: border-box
 .App
   padding: 20px
   background-color: $color2
   height: max-content
   min-height: 100vh
+.app-menu
+  display: flex
+  justify-content: space-around
+  margin-bottom: 20px
+  .app-menu-item
+    text-decoration: none
+    background-color: $color1
+    color: $color2
+    font-size: 1.2em
+    padding: 5px
+    border-radius: 5px
+  .home
+    background-color: seagreen
 h1
   text-align: center
   color: $color1
   font-family: "Times New Roman", sans-serif
-.main-menu
+.notes-menu
   width: 50%
   margin: 0 auto
   display: flex
@@ -80,7 +100,7 @@ h1
       word-wrap: break-word
       padding: 10px
       margin: 0
-.add-page
+.note-add-page
   width: max-content
   margin: 0 auto
   h2
@@ -121,24 +141,124 @@ h1
       outline: none
       box-shadow: 0 0 20px $color1
 
+.date-box
+  text-align: center
+  color: $color1
+  margin-bottom: 15px
+  font-weight: bold
+.todos
+  width: 40%
+  margin: 0 auto
+  box-shadow: #aaa 0 0 20px
+  input
+    outline: 0
+    font-size: 0.9em
+  .btn-arrow:hover span
+    color: #333 !important
+  .add-btn
+    background-color: $color1
+    padding: 0 15px
+  ul
+    list-style-type: none
+    span.active
+      @include circleStyles
+      color: transparent
+    span.completed
+      @include circleStyles
+      color: green
+    span.completedItem
+      color: #bbb
+      text-decoration: line-through
+    li button:hover
+      color: hsl(0, 100%, 50%)
+    .act-com-todo:hover button
+      color: hsl(0, 100%, 50%)
+.btn-menu
+  background-color: transparent
+  border: solid 1px transparent
+  border-radius: 4px
+  margin-right: 3px
+  color: grey
+  &:hover
+    border: solid 1px #aaaaaa
+.focusBtn
+  border: solid 1px #aaaaaa
+.clear-btn
+  cursor: pointer
+  color: grey
+  &:hover
+    text-decoration: underline
+.tooltip-text
+  display: inline-block
+  color: transparent
+  background-color: transparent
+  width: max-content
+  padding: 5px 3px
+  font-size: 0.8em
+  border-radius: 5px
+  margin-left: 10px
+  text-align: center
+  transition: 0.6s
+.text-todo:hover .tooltip-text
+  background-color: rgba(0, 0, 0, 0.5)
+  color: white
+.hide-input
+  display: none
+.show-input
+  display: block
+  width: 100%
+  position: absolute
+  z-index: 1
+
 @media screen and (max-width: 1200px)
   .date2
     grid-column: 1 / 2
+@media screen and (max-width: 1100px)
+  .btn-menu, .clear-btn, .count-left
+    font-size: 0.95em
+@media screen and (max-width: 992px)
+  .todos
+    width: 55%
+    input
+      font-size: 0.85em
+  .btn-menu, .clear-btn, .count-left
+    font-size: 0.9em
 @media screen and (max-width: 778px)
-  .notes-box, .main-menu
+  .notes-box, .notes-menu
     width: 70%
   pre
     font-size: 0.8em
+  .todos
+    width: 70%
+  .btn-menu, .clear-btn, .count-left
+    font-size: 0.85em
 @media screen and (max-width: 600px)
-  .notes-box, .main-menu
+  .notes-box, .notes-menu
     width: 80%
   pre
     font-size: 0.7em
   .notes-box .single-note .note-head .date
     font-size: 0.5em
+  .todos
+    input
+      font-size: 0.8em
+    width: 80%
+  .btn-menu, .clear-btn
+    font-size: 0.8em
+  .date-box
+    font-size: 0.8em
 @media screen and (max-width: 480px)
-  .notes-box, .main-menu
+  .notes-box, .notes-menu
     width: 90%
+  .todos
+    width: 90%
+    input
+      font-size: 0.7em
+    .add-btn
+      padding: 0 7px
+  .btn-menu
+    font-size: 0.7em
+    margin-right: 0
 
 
 

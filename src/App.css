@@ -1,0 +1,357 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  padding: 20px;
+  background-color: #ddd;
+  height: max-content;
+  min-height: 100vh;
+}
+
+.app-menu {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.app-menu .app-menu-item {
+  text-decoration: none;
+  background-color: salmon;
+  color: #ddd;
+  font-size: 1.2em;
+  padding: 5px;
+  border-radius: 5px;
+}
+.app-menu .home {
+  background-color: seagreen;
+}
+
+h1 {
+  text-align: center;
+  color: salmon;
+  font-family: "Times New Roman", sans-serif;
+}
+
+.notes-menu {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.notes-menu span {
+  align-self: flex-end;
+  color: salmon;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.notes-menu button {
+  border: none;
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  background-color: salmon;
+  color: #ddd;
+}
+.notes-menu button:hover {
+  background-color: rgb(250, 128, 90);
+}
+
+.notes-box {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: salmon;
+  color: #ddd;
+}
+.notes-box .single-note {
+  border: solid 2px black;
+  border-radius: 14px 0 14px 0;
+  overflow: hidden;
+}
+.notes-box .single-note:not(:first-child) {
+  margin-top: 20px;
+}
+.notes-box .single-note .note-head {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ddd;
+  padding: 3px 5px;
+  color: black;
+}
+.notes-box .single-note .note-head span {
+  grid-column: 3/4;
+}
+.notes-box .single-note .note-head .date {
+  font-size: 0.6em;
+  font-style: italic;
+  font-weight: bold;
+}
+.notes-box .single-note .note-head button {
+  background-color: transparent;
+  border: none;
+}
+.notes-box .single-note .note-head button:first-child {
+  margin-right: 5px;
+}
+.notes-box .single-note .note-head .edit-btn:hover {
+  color: seagreen;
+}
+.notes-box .single-note .note-head .del-btn:hover {
+  color: red;
+}
+.notes-box .single-note .subject {
+  font-family: "Times New Roman";
+  font-size: 1.3em;
+  padding: 5px;
+  font-weight: bold;
+}
+.notes-box .single-note hr {
+  margin: 0;
+  color: black;
+}
+.notes-box .single-note pre {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 10px;
+  margin: 0;
+}
+
+.note-add-page {
+  width: max-content;
+  margin: 0 auto;
+}
+.note-add-page h2 {
+  text-align: center;
+  color: salmon;
+  margin-top: 2%;
+}
+.note-add-page .insert-menu {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+.note-add-page .insert-menu button {
+  background-color: salmon;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+}
+.note-add-page .subject-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.note-add-page label {
+  color: salmon;
+  margin-right: 5px;
+}
+.note-add-page .subject-input {
+  padding: 3px;
+  border: 2px salmon solid;
+}
+.note-add-page .subject-input:focus {
+  outline: none;
+  box-shadow: 0 0 20px salmon;
+}
+.note-add-page .text-input {
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5%;
+  border: 2px salmon solid;
+  min-height: 300px;
+  min-width: 300px;
+  resize: both;
+}
+.note-add-page .text-input:focus {
+  outline: none;
+  box-shadow: 0 0 20px salmon;
+}
+
+.date-box {
+  text-align: center;
+  color: salmon;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.todos {
+  width: 40%;
+  margin: 0 auto;
+  box-shadow: #aaa 0 0 20px;
+}
+.todos input {
+  outline: 0;
+  font-size: 0.9em;
+}
+.todos .btn-arrow:hover span {
+  color: #333 !important;
+}
+.todos .add-btn {
+  background-color: salmon;
+  padding: 0 15px;
+}
+.todos ul {
+  list-style-type: none;
+}
+.todos ul span.active {
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 0 4px;
+  margin-right: 8px;
+  cursor: pointer;
+  color: transparent;
+}
+.todos ul span.completed {
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 0 4px;
+  margin-right: 8px;
+  cursor: pointer;
+  color: green;
+}
+.todos ul span.completedItem {
+  color: #bbb;
+  text-decoration: line-through;
+}
+.todos ul li button:hover {
+  color: hsl(0deg, 100%, 50%);
+}
+.todos ul .act-com-todo:hover button {
+  color: hsl(0deg, 100%, 50%);
+}
+
+.btn-menu {
+  background-color: transparent;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  margin-right: 3px;
+  color: grey;
+}
+.btn-menu:hover {
+  border: solid 1px #aaaaaa;
+}
+
+.focusBtn {
+  border: solid 1px #aaaaaa;
+}
+
+.clear-btn {
+  cursor: pointer;
+  color: grey;
+}
+.clear-btn:hover {
+  text-decoration: underline;
+}
+
+.tooltip-text {
+  display: inline-block;
+  color: transparent;
+  background-color: transparent;
+  width: max-content;
+  padding: 5px 3px;
+  font-size: 0.8em;
+  border-radius: 5px;
+  margin-left: 10px;
+  text-align: center;
+  transition: 0.6s;
+}
+
+.text-todo:hover .tooltip-text {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.hide-input {
+  display: none;
+}
+
+.show-input {
+  display: block;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .date2 {
+    grid-column: 1/2;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .btn-menu, .clear-btn, .count-left {
+    font-size: 0.95em;
+  }
+}
+@media screen and (max-width: 992px) {
+  .todos {
+    width: 55%;
+  }
+  .todos input {
+    font-size: 0.85em;
+  }
+  .btn-menu, .clear-btn, .count-left {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 778px) {
+  .notes-box, .notes-menu {
+    width: 70%;
+  }
+  pre {
+    font-size: 0.8em;
+  }
+  .todos {
+    width: 70%;
+  }
+  .btn-menu, .clear-btn, .count-left {
+    font-size: 0.85em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .notes-box, .notes-menu {
+    width: 80%;
+  }
+  pre {
+    font-size: 0.7em;
+  }
+  .notes-box .single-note .note-head .date {
+    font-size: 0.5em;
+  }
+  .todos {
+    width: 80%;
+  }
+  .todos input {
+    font-size: 0.8em;
+  }
+  .btn-menu, .clear-btn {
+    font-size: 0.8em;
+  }
+  .date-box {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .notes-box, .notes-menu {
+    width: 90%;
+  }
+  .todos {
+    width: 90%;
+  }
+  .todos input {
+    font-size: 0.7em;
+  }
+  .todos .add-btn {
+    padding: 0 7px;
+  }
+  .btn-menu {
+    font-size: 0.7em;
+    margin-right: 0;
+  }
+}
+
+/*# sourceMappingURL=App.css.map */

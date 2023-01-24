@@ -19,7 +19,7 @@ export const Notation = () => {
     }
 
     return(
-        <div className="add-page">
+        <div className="note-add-page">
             <h2>Add a new note</h2>
             <div className="insert-menu"><button className="fa fa-check text-success" onClick={handleClick}></button></div>
             <div className="subject-box">

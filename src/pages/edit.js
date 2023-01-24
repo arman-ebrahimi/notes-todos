@@ -19,7 +19,7 @@ export const Edit = () => {
         navigate("/")
     }
     return(
-        <div className="add-page">
+        <div className="note-add-page">
             <h2>Edit your note</h2>
             <div className="insert-menu"><button className="fa fa-check text-success" onClick={() => handleClick(location.state.index)}></button></div>
             <div className="subject-box">

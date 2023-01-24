@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 import './App.sass';
 import {NotesList, Notation, Edit} from "./pages";
-import {Todos} from "./components";
+import {Todos} from "./pages";
 
 function App() {
     const [homeClick, setHomeClick] = useState(true)

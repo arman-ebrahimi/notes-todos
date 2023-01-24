@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {TodoList, FooterMenu, useNowDate} from ".";
+import {TodoList, FooterMenu, useNowDate} from "../components";
 
 export const Todos = () => {
     const [newTodo, setNewTodo] = useState("");
